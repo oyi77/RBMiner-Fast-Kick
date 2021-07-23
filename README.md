@@ -1,14 +1,4 @@
-# RainbowMiner [![current release](https://img.shields.io/github/release/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/releases) [![current release date](https://img.shields.io/github/release-date/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/releases) [![open issues](https://img.shields.io/github/issues-raw/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/issues) [![downloads](https://img.shields.io/github/downloads/rainbowminer/RainbowMiner/total.svg)](https://github.com/RainbowMiner/RainbowMiner/releases)
-###### **RELEASES: [https://github.com/RainbowMiner/RainbowMiner/releases](https://github.com/RainbowMiner/RainbowMiner/releases)**
-
-###### **Actual master.zip: [Developer Version master.zip](https://github.com/RainbowMiner/RainbowMiner/archive/master.zip)**
-
-###### **Central monitoring for all of your rigs: [https://rbminer.net](https://rbminer.net)**
-[![miners](https://img.shields.io/endpoint?url=https%3A%2F%2Frbminer.net%2Fapi%2Fshio.php%3Fid%3Dminers)](https://rbminer.net/monitoring) [![profit](https://img.shields.io/endpoint?url=https%3A%2F%2Frbminer.net%2Fapi%2Fshio.php%3Fid%3Dprofit)](https://rbminer.net/monitoring)
-
-###### **Discord: [https://discord.gg/znzQpJWWQH](https://discord.gg/znzQpJWWQH)**
-[![online](https://img.shields.io/discord/513274071010508800)](https://discord.gg/znzQpJWWQH)
-
+# RBMiner-Fast-Kick [![current release](https://img.shields.io/github/release/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/releases) [![current release date](https://img.shields.io/github/release-date/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/releases) [![open issues](https://img.shields.io/github/issues-raw/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/issues) [![downloads](https://img.shields.io/github/downloads/rainbowminer/RainbowMiner/total.svg)](https://github.com/RainbowMiner/RainbowMiner/releases)
 
 ## INTRODUCTION
 
@@ -17,6 +7,9 @@ Features: easy setup wizard with adhoc working default (no editing of files need
 
 
 ![alt text](https://raw.githubusercontent.com/RainbowMiner/miner-binaries/master/rainbowminerhome.png "RainbowMiner Web GUI")
+
+
+## IMPORTANT! This is a modified version of RainbowMiner to run on CloudBased Platform and only support Linux for Now
 
 
 ## FEATURE SUMMARY
@@ -49,29 +42,6 @@ Features: easy setup wizard with adhoc working default (no editing of files need
 - **Offline notifications via email and/or https://pushover.net**
 
 ## REQUIRED PRE-REQUISITES
-
-### Windows 7/8.1/10 pre-requisites
-
-1. Install PowerShell 7: [Download Installer for version 7.1.3](https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/PowerShell-7.1.3-win-x64.msi)
-2. Install Microsoft .NET Framework 4.7.2 or later: [Web Installer](https://www.microsoft.com/net/download/dotnet-framework-runtime)
-3. Recommended GPU drivers (note: the latest drivers aren't always the best to use):
-    - **Nvidia official downloads**:
-      - [Nvidia Driver Version v461.92 - Windows 10](https://international.download.nvidia.com/Windows/461.92/461.92-desktop-win10-64bit-international-dch-whql.exe)
-      - [Nvidia Driver Version v461.92 - Windows 7,8,8.1](https://international.download.nvidia.com/Windows/461.92/461.92-desktop-win7-64bit-international-whql.exe)
-    - **AMD**: [AMD Adrenalin 2020 Edition 20.3.1](https://www.guru3d.com/files-get/amd-radeon-adrenalin-edition-20-2-3-driver-download,1.html) - if you run into trouble, try older versions.
-4. If your rig contains AMD graphic cards, RainbowMiner's overclocking features rely on MSI Afterburner, you should install and run it: [Download](http://download.msi.com/uti_exe//vga/MSIAfterburnerSetup.zip)
-
-Finally: check, if Powershell 7 is in your PATH, because RainbowMiner will not run correctly, if the path to powershell is missing. Sometimes "C:\Program Files\PowerShell\6" has to be added manually to the PATH environement variable after installing Powershell 6. Here is a nice tutorial, how to add to PATH environment variable https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/amp/
-
-A note on Windows Nvidia drivers. Recommended lite-packed versions are available for direct download:
-
-
-### Ubuntu 18.x Pre-requisites
-(This section is WIP! Want to help? Make an [issue](https://github.com/RainbowMiner/RainbowMiner/issues) or a [PR](https://github.com/RainbowMiner/RainbowMiner/pulls)))
-
-Debian-based distros will be more-or-less the same as these instructions.
-
-Other distros will have settings in different places (hugepages) and the software install commands will be differen (dnf, yum, pacman, nix, pkg, etc.) It is assumed you are clever enough to sort out the differences on your own if you choose a different distribution. BUT! As noted above, feel free to edit this page and make a pull request.
 
 ###### Huge Pages
 By default, linux sets memory-chunk size fairly small. This is to save RAM useage for low-requirement sofware (ie: most programs running in system-space, rather than user-space.) Scrypt^N (Verium) and the CryptoNight family (Monero, etc.) algorithms *need* a large memory-chunk allocation, and many benefit from it even if they don't need it. In linux, this is call 'hugepages'. For Ubuntu-based distributions, you can set this manually on each boot with `sudo sysctl -w vm.nr_hugepages=XXX` where XXX is a how many megabytes to assign per page-chunk.  This can be made persistent across reboots by editing the value in `/proc/sys/vm/nr_hugepages` and you need to be root do it (ie: `sudo emacs -wm /proc/sys/vm/nr_hugepages` (substitue 'emacs -wm' with your editor of choice - nano, vi, joe, etc.)
@@ -133,37 +103,30 @@ Reboot and you should be good to go!
 
 ## INSTALLATION
 
-#### 1. Download RainbowMiner and extract to a folder of you choice: [![current release](https://img.shields.io/github/release/RainbowMiner/RainbowMiner.svg)](https://github.com/RainbowMiner/RainbowMiner/releases)
-
-**Important:** Add the RainbowMiner directory to the exceptions of your antivirus program. Otherwise, some miner will cause false virus alerts.
 
 On Linux, you may use git for a shortcut:
 ```
 sudo apt-get update
 sudo apt-get install git
-git clone https://github.com/rainbowminer/RainbowMiner
+git clone https://github.com/oyi77/RBMiner-Fast-Kick
 ```
 
 #### 2. Run the RainbowMiner installer
+Before you run the command below :
+Edit the setup.json file to match your reference, like wallet, miners, pools, and algos (You can set it up later when the program runs)
 
-On Windows:
-- open RainbowMiner folder with Explorer
-- right-click "Install.bat" and choose "Run as administrator"
-
-On Linux, cd into your RainbowMiner folder, change the attributes of install.sh, start.sh and others and run the Installer as root (sudo):
+On Linux:
 ```
-cd RainbowMiner
-chmod +x *.sh
-sudo ./install.sh
+cd RBMiner-Fast-kick
+chmod +x asucok.sh
+sudo ./asucok.sh
 ```
 
-At the end of the install, you will be asked to start RainbowMiner.
 
 **If the installer fails to install PowerShell, this is the way to install it manually:**
 
 Find the matching version of [Powershell Core v7.1.3 for your system from here](https://github.com/PowerShell/PowerShell/releases) and download it to your machine.
 
-On Windows, just run the Installer
 
 On Linux: either use the GUI installer to install the package or do it manually, e.g. for Ubuntu:
 ```
@@ -179,61 +142,17 @@ apt install -f
 
 
 
-#### 3. Start it (if not yet running)
+#### 3. There isn't any step its run flawlessly
 
-##### On Windows:
-
-- open RainbowMiner folder with Explorer
-- right-click "Start.bat" and choose "Run as administrator"
-
-##### On Linux:
-
+To access the running miner just type 
 ```
-./start.sh
+screen -ls
+# see something like RainbowMiner
+# it means that its already running
+# to see what inside just type
+
+screen -R RainbowMiner
 ```
-
-Alternative: start as Linux `screen`:
-
-```
-./start-screen.sh
-```
-
-- press `Ctrl+A`, then `d` to detach from screen (imagine you want to disconnect your ssh session)
-- enter `screen -R RainbowMiner` to reconnect to screen
-
-
-#### 4. Enter basic information
-
-   - choose your rig's WorkerName [default=rainbowminer]
-   - choose your RunMode:
-     - **standalone** = all config locally and direct connect to pool APIs
-     - **server** = act as server for many Clients, may also run as mining rig
-     - **client** = opionally use server's config files, connect to server for pool API data
-   - enter API port for webinterface at http://localhost:<APIport>
-   - optionally protect access to the webinterface with username and password
-   - for client-mode:
-     - enter the server's name (or IP)
-     - enter the server's API port
-     - optionally enter username and password, if you have protected the access to the servers's webinterface
-
-
-#### 5. Enter your credentials:
-
-   - your btc-wallet address (one for general use, and one for NiceHash)
-   - your MiningPoolHub credentials, if you plan to use this pool
-   - your [MiningRigRentals](https://www.miningrigrentals.com?ref=2598069) credentials, if you plan to use this pool   
-   - your region. Valid names are: US, Europe, Asia
-   - your currencies. Valid currencies are: BTC, USD, EUR, GBP, ETH, ..
-   - the pools, you want to mine as comma separated list. 
-   - the algorithm, you want to mine as comma separated list.
-   - the devices, you want to use for mining. Valid descriptors are: gpu, cpu, nvidia, amd (RainbowMiner will show you, which devices are available on your machine)
-     or use your device names (without spaces, without leading geforce): gtx1070, gtx1080ti ..
-
-
-#### 6. Let the downloads and benchmarking finish
-
-   - **be patient!** This might take a while
-   - Anyway: it will already mine to your wallets
 
 ### Done!
 
@@ -1852,13 +1771,7 @@ The profit switcher can be controlled like follows. To be able to compare the po
   
 ## CREDITS
 
-The miner script has initially been forked from MultiPoolMiner, for my private use, only.
-Since I changed and optimized the script a lot to suit my needs, I decided to make the source code public, so that others can profit from my optimizations.
+The miner script has initially been forked from Rainbow Miner, for my private use, only.
+I decide to share it with you too, to make it easy to use. By the way, i am removing feature for windows. if you want to use it on windows go to the official RainbowMiner
 
-**If you are happy with the script, crypto donations are greatly appreciated:**
-
-- BTC: 3P7pVVNpExuuHL9wjWKAo7jzQsb9ZziUFC
-- BTC: bc1q6h7k2ul4a4rtmrlaemlxd9kmhtf89nlg6s4ydu (bech32 native segwit)
-- BCH: 1MGRzyaLjQ67ZwwL9QTbXzwLxa8x1qSTBD
-- ETH: 0x3084A8657ccF9d21575e5dD8357A2DEAf1904ef6
 
