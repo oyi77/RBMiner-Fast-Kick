@@ -154,7 +154,7 @@
     "DefaultPoolRegion": "us,eu",
     "EnableMinerStatus": "1",
     "MinerStatusUrl": "https://rbminer.net",
-    "MinerStatusKey": "b6ccbfd7-ab5e-4c88-b5ef-c6be57873fc7",
+    "MinerStatusKey": "",
     "MinerStatusEmail": "",
     "PushOverUserKey": "",
     "MinerStatusMaxTemp": 90.0,
@@ -1593,8 +1593,8 @@
       "Region": "",
       "SSL": "",
       "User": "oyi77",
-      "API_ID": "587670",
-      "API_Key": "689d3d75246394e3c64c4b28b007b4d9eaa258fdc9e6d173b71cbccb52bc064e"
+      "API_ID": "",
+      "API_Key": ""
     },
     "MiningPoolHubCoins": {
       "AECurrency": "BTC",
@@ -1623,8 +1623,8 @@
       "Region": "",
       "SSL": "",
       "User": "oyi77",
-      "API_ID": "587670",
-      "API_Key": "689d3d75246394e3c64c4b28b007b4d9eaa258fdc9e6d173b71cbccb52bc064e",
+      "API_ID": "",
+      "API_Key": "",
       "ETC": "$ETC",
       "ETC-Params": ""
     },
@@ -1842,9 +1842,9 @@
       "Region": "",
       "SSL": "",
       "BTC": "35nRsgGjD1G1VLA1ad6ejHEPog3ttbFQy9",
-      "OrganizationID": "33f8a16e-4238-49bf-ac51-0bfa46ac644c",
-      "API_Key": "e91b0e91-1b38-433f-8c16-e95f29a278fd",
-      "API_Secret": "60c0b9eb-01c8-4b3a-a585-00a41b01fc514a8ea584-f3ec-4bfd-b0d5-3452bff19680"
+      "OrganizationID": "",
+      "API_Key": "",
+      "API_Secret": ""
     },
     "NLpool": {
       "Penalty": 16,
