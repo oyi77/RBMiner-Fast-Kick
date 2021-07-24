@@ -1,0 +1,19 @@
+{
+  "PoolName": "MiningPoolHub",
+  "Currency": "ETC",
+  "Balance": 0.009562,
+  "Paid": 0.0,
+  "Earnings": 0.00338477,
+  "Earnings_1h": 0.0,
+  "Earnings_1d": 0.00338477,
+  "Earnings_1w": 0.00338477,
+  "Earnings_Avg": 0.00338477,
+  "Last_Earnings": [
+    {
+      "Date": "2021-07-22T22:26:01.7246457Z",
+      "Value": 0.00338477
+    }
+  ],
+  "Started": "2021-07-22T17:53:57.7793967Z",
+  "Updated": "2021-07-22T22:26:01.7246457Z"
+}

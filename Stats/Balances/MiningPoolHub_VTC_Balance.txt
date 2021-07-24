@@ -1,0 +1,14 @@
+{
+  "PoolName": "MiningPoolHub",
+  "Currency": "VTC",
+  "Balance": 0.0,
+  "Paid": 0.0,
+  "Earnings": 0.0,
+  "Earnings_1h": 0.0,
+  "Earnings_1d": 0.0,
+  "Earnings_1w": 0.0,
+  "Earnings_Avg": 0,
+  "Last_Earnings": [],
+  "Started": "2021-07-22T17:23:17.2689502Z",
+  "Updated": "2021-07-22T17:23:17.2689502Z"
+}

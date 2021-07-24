@@ -1,0 +1,19 @@
+{
+  "PoolName": "Nicehash",
+  "Currency": "BTC",
+  "Balance": 0.00002398,
+  "Paid": 0.0,
+  "Earnings": 0.00001195,
+  "Earnings_1h": 0.0,
+  "Earnings_1d": 0.00001195,
+  "Earnings_1w": 0.00001195,
+  "Earnings_Avg": 0.00001195,
+  "Last_Earnings": [
+    {
+      "Date": "2021-07-23T00:26:43.9987738Z",
+      "Value": 0.00001195
+    }
+  ],
+  "Started": "2021-07-22T17:23:17.2689502Z",
+  "Updated": "2021-07-23T00:26:43.9987738Z"
+}
